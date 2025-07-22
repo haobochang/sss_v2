@@ -1,0 +1,161 @@
+# Same as Black.
+line-length = 100
+indent-width = 4
+
+
+# Assume Python version
+target-version = "py312"
+show-fixes = true
+
+
+# Exclude a variety of commonly ignored directories.
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".ipynb_checkpoints",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pyenv",
+    ".pytest_cache",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    ".vscode",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "site-packages",
+    "venv",
+    # "tests",
+    'benchmark',
+]
+
+
+[lint]
+# Enable Pyflakes (`F`) and a subset of the pycodestyle (`E`)  codes by default.
+# Unlike Flake8, Ruff doesn't enable pycodestyle warnings (`W`) or
+# McCabe complexity (`C901`) by default.
+select = [
+    'E',     # PEP8 Errors
+    "F",     # PEP8 Warnings
+    "W",     # PEP8 Warnings
+    "C90",   # complex-strucutre
+    'I',     # isort
+    "N",     # Naming
+    "UP",    # pyupgrade
+    "YTT",   # sys.version
+    "ASYNC", # flake8-async
+    "S",     # bandit.  security
+    # "BLE",   # bind except
+    # "FBT",   # bool arguments   (!!! recommend to open)
+    # "B",     # bugbear
+    "A", # builtins
+    # "COM",   # commas
+    "C4",  # flake8-comprehensions
+    "T10", # debugger
+    "ISC", # flake8-implicit-str-concat
+    "ICN", # flake8-import-conventions
+    "G",   # logging format
+    "INP", # package has no __init__.py
+    "PIE", # unnessary 
+    # "T20",   # print found
+    # "RSE",   # raise lint
+    # "RET",   # return lint
+    # "SLF",   # private member lint
+    # "SLOT",  # __slot__ lint
+    "SIM",   # simplify your code
+    "ARG",   # unused argument
+    "PTH",   # use pathlib instead of os.path
+    "TD006", # Capitalizing the "TODO" 
+    "FIX",   # check your TODO, FIXME, XXX, HACK tag
+    # "ERA",   # Found commented-out code
+    # "PD",    # Pandas know
+    # "PGH",   # some checks: eval, logging.warn(), type-ignore all, noqa all...
+    "PL", # PyLint
+    # "TRY",   # try-except lint
+    "FLY", # f-string instead of ''.join()
+    # "NPY",  # numpy rules
+    "PERF", # Performance
+    # "RUF",   # Ruff rules
+
+    # D: Docstring
+    # "D103", # Missing docstring in public function
+
+    # "ALL", # All rules
+]
+
+ignore = [
+    'E402',    # module level import not at top of file
+    "PD901",   # `df` is a bad variable name. Be kinder to your future self.
+    "RET504",  # Unnecessary return statement 
+    "FIX002",  # TODO found
+    "E731",    # do not assign a lambda expression, use a def
+    "PERF203", # Checks for uses of except handling via try-except within for and while loops.
+    "S104",    # host = 0.0.0.0
+    "S113",    # Probable use of `requests` call without timeout
+]
+
+
+# Allow fix for all enabled rules (when `--fix`) is provided.
+fixable = ["ALL"]
+unfixable = []
+
+# Allow unused variables when underscore-prefixed.
+dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
+
+[format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+# Enable auto-formatting of code examples in docstrings. Markdown,
+# reStructuredText code/literal blocks and doctests are all supported.
+#
+# This is currently disabled by default, but it is planned for this
+# to be opt-out in the future.
+docstring-code-format = true
+
+# Set the line length limit used when formatting code snippets in
+# docstrings.
+#
+# This only has an effect when the `docstring-code-format` setting is
+# enabled.
+docstring-code-line-length = "dynamic"
+
+
+[lint.per-file-ignores] # 忽略这些文件中的规则
+"__init__.py" = [
+    'F401', # module imported but unused
+]
+"tests/*" = [
+    "PLR2004", # magic number
+    "S101",    # Use of assert detected
+    "ARG001",  # Unused argument
+]
+"test*" = [
+    "PLR2004", # magic number
+    "S101",    # Use of assert detected
+    "ARG001",  # Unused argument
+]
+
+
+[lint.pylint]
+max-args = 7

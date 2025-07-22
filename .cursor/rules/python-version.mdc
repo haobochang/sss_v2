@@ -1,0 +1,28 @@
+---
+alwaysApply: true
+---
+当前项目使用python3.12版本，请使用python3.12版本进行开发。
+
+使用uv作为包管理工具
+
+sqlalchemy 2.0 作为orm框架
+
+polars 作为数据处理框架
+
+fastapi 作为web框架
+
+
+以下是公司内部库：
+
+config-center 作为配置中心，使用apollo作为配置中心
+
+virgo 作为分布式文件数据读写框架
+
+
+
+
+
+
+
+
+

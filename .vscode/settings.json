@@ -1,0 +1,44 @@
+{
+    // 启用评论翻译的悬停功能
+    "commentTranslate.hover.enabled": true,
+    // Python分析器的类型检查模式设置为基本模式
+    "python.analysis.typeCheckingMode": "basic",
+    // 文件资源管理器中排除的文件和文件夹
+    "files.exclude": {
+        "**/__pycache__": true, // 排除Python缓存文件
+        "**/.pytest_cache": true, // 排除pytest缓存文件
+    },
+    // 启用pytest参数的内联提示
+    "python.analysis.inlayHints.pytestParameters": true,
+    // Python文件的特定编辑器设置
+    "[python]": {
+        // 编辑器标尺位置（120列）
+        "editor.rulers": [
+            100
+        ],
+        // 默认格式化器使用Ruff
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        // 保存时自动格式化代码
+        "editor.formatOnSave": true,
+        // 保存时执行的代码动作
+        "editor.codeActionsOnSave": {
+            "source.organizeImports.ruff": "explicit" // 使用Ruff自动整理导入
+        },
+    },
+    // Python测试框架配置
+    "python.testing.pytestArgs": [
+        "tests" // pytest的测试目录
+    ],
+    "python.testing.unittestEnabled": false, // 禁用unittest
+    "python.testing.pytestEnabled": true, // 启用pytest
+    // Jupyter笔记本格式化配置
+    "notebook.defaultFormatter": "charliermarsh.ruff", // 笔记本默认格式化器
+    "notebook.formatOnSave.enabled": true, // 笔记本保存时格式化
+    "notebook.codeActionsOnSave": {
+        "notebook.source.fixAll": "explicit" // 笔记本保存时修复所有问题
+    },
+    // 启用Python自动导入补全
+    "python.analysis.autoImportCompletions": true,
+    // Git提交插件配置：限制提交主题最大字符数
+    "GitCommitPlugin.MaxSubjectCharacters": 50
+}
