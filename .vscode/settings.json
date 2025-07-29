@@ -7,6 +7,7 @@
     "files.exclude": {
         "**/__pycache__": true, // 排除Python缓存文件
         "**/.pytest_cache": true, // 排除pytest缓存文件
+        "**/.venv": true, // 排除venv文件夹
     },
     // 启用pytest参数的内联提示
     "python.analysis.inlayHints.pytestParameters": true,

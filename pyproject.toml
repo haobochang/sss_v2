@@ -5,23 +5,38 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "bson>=0.5.10",
+    "beanie==2.0.0",
     "config-center>=1.5.1",
     "employee>=1.4.2",
+    "fastapi>=0.116.1",
+    "graphviz>=0.21",
+    "matplotlib>=3.10.3",
+    "networkx>=3.5",
+    "plotly>=6.2.0",
     "polars>=1.31.0",
-    "pydantic-mongo>=3.1.0",
-    "pymongo>=4.13.2",
+    "pygraphviz>=1.14",
+    "pymongo==4.12.1",
     "pymysql>=1.1.1",
-    "sqlmodel>=0.0.24",
+    "sqlalchemy>=2.0.41",
+    "treelib>=1.8.0",
+    "uvicorn>=0.35.0",
     "virgo>=3.2.37",
 ]
 
+
+[tool.uv.sources]
+beanie = { index = 'tuna' }
+
 [[tool.uv.index]]
+name = "sci-inv"
 url = "http://pypi.sci-inv.cn/simple"
 default = true
 
+[[tool.uv.index]]
+name = "tuna"
+url = "https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple"
+explicit = true
+
+
 [dependency-groups]
-dev = [
-    "jupyterlab>=4.4.4",
-    "rich>=14.0.0",
-]
+dev = ["jupyterlab>=4.4.4", "rich>=14.0.0"]

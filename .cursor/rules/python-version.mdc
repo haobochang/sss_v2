@@ -12,6 +12,7 @@ polars 作为数据处理框架
 fastapi 作为web框架
 
 
+
 以下是公司内部库：
 
 config-center 作为配置中心，使用apollo作为配置中心
@@ -19,7 +20,10 @@ config-center 作为配置中心，使用apollo作为配置中心
 virgo 作为分布式文件数据读写框架
 
 
+类型注释使用 python3.12 的推荐，不需要在用typing模块List，Dict，Any等，直接使用python3.12的推荐
 
+
+运行脚本使用 uv run python 文件名.py
 
 
 
